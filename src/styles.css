@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  width: clamp(500px, 70vw, 1400px);
+  margin: 0 auto;
+  border: red 1px solid;
+}
+
+.container > div {
+  display: flex;
+}
+
+.header-container {
+  height: 15vh;
+}
+
+.sidebar-container {
+  height: 100%;
+  width: 20%;
+}
+
+.content-container {
+  height: 100%;
+  width: 80%;
+}
+
+.sidebar-container ul {
+  list-style-type: none;
+}

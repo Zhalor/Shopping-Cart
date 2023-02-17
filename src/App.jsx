@@ -1,11 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import Content from './components/content';
+import './styles.css';
 
 function App() {
 
   const [storeItems, setStoreItems] = useState([]);
 
   async function fetchFakeItems() {
-    const data = await fetch("https://fakestoreapi.com/products?limit=5");
+    const data = await fetch('https://fakestoreapi.com/products/categories');
     const items = await data.json();
     setStoreItems(items);
   }
@@ -15,8 +20,12 @@ function App() {
   }, []);
 
   return (
-   <div>
-    <button onClick={() => console.log(storeItems)}>Click Me!</button>
+   <div className='container'>
+    <Header />
+    <div>
+      <Sidebar />
+      <Content />
+    </div>
    </div>
   )
 }
