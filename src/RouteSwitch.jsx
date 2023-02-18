@@ -1,20 +1,30 @@
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from './App';
-import Electronics from './components/Electronics';
-import Jewelery from './components/Jewelery';
-import MensClothing from './components/Mens_Clothing';
-import WomensClothing from './components/Womens_Clothing';
-
+import Shop from "./components/Shop";
+import Cart from "./components/Cart";
 
 function RouteSwitch() {
+
+  const [storeItems, setStoreItems] = useState([]);
+  const [count, setCount] = useState(0);
+
+  async function fetchFakeItems() {
+    const data = await fetch('https://fakestoreapi.com/products');
+    const items = await data.json();
+    setStoreItems(items);
+  }
+
+  useEffect(() => {
+    fetchFakeItems();
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<App />} />
-        <Route path='/electronics' element={<Electronics />} />
-        <Route path='/jewelery' element={<Jewelery />} />
-        <Route path='/mens_clothing' element={<MensClothing />} />
-        <Route path='/womens_clothing' element={<WomensClothing />} />
+        <Route path='/' element={<App setCount={setCount} count={count} />} />
+        <Route path='/shop' element={<Shop storeItems={storeItems} count={count} />} />
+        <Route path='/cart' element={<Cart count={count} />} />
       </Routes>
     </BrowserRouter>
   );

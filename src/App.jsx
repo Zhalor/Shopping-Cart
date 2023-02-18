@@ -1,31 +1,12 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import Content from './components/content';
+import Landing from './components/Landing';
 import './styles.css';
 
-function App() {
-
-  const [storeItems, setStoreItems] = useState([]);
-
-  async function fetchFakeItems() {
-    const data = await fetch('https://fakestoreapi.com/products/categories');
-    const items = await data.json();
-    setStoreItems(items);
-  }
-
-  useEffect(() => {
-    fetchFakeItems();
-  }, []);
-
+function App(props) {
   return (
    <div className='container'>
-    <Header />
-    <div>
-      <Sidebar />
-      <Content />
-    </div>
+    <Header count={props.count} />
+    <Landing setCount={props.setCount} count={props.count} />
    </div>
   )
 }
