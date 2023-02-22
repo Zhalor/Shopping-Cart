@@ -7,7 +7,7 @@ import Cart from "./components/Cart";
 function RouteSwitch() {
 
   const [storeItems, setStoreItems] = useState([]);
-  const [count, setCount] = useState(0);
+  const [cart, setCart] = useState([]);
 
   async function fetchFakeItems() {
     const data = await fetch('https://fakestoreapi.com/products');
@@ -22,9 +22,9 @@ function RouteSwitch() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<App setCount={setCount} count={count} />} />
-        <Route path='/shop' element={<Shop storeItems={storeItems} count={count} />} />
-        <Route path='/cart' element={<Cart count={count} />} />
+        <Route path='/' element={<App cart={cart} />} />
+        <Route path='/shop' element={<Shop storeItems={storeItems} cart={cart} setCart={setCart} />} />
+        <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
       </Routes>
     </BrowserRouter>
   );

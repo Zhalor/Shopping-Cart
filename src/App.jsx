@@ -5,8 +5,8 @@ import './styles.css';
 function App(props) {
   return (
    <div className='container'>
-    <Header count={props.count} />
-    <Landing setCount={props.setCount} count={props.count} />
+    <Header cart={props.cart} />
+    <Landing />
    </div>
   )
 }

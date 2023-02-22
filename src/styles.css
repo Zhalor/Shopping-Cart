@@ -63,7 +63,13 @@ body {
   padding-left: 120px;
 }
 
-.item > img {
+.item > img,
+.cart-item > img {
   width: 200px;
   height: 200px;
+}
+
+.cart-item {
+  display: flex;
+  gap :10px;
 }
