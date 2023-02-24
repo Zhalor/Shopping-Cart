@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import App from './App';
-import Shop from "./components/Shop";
-import Cart from "./components/Cart";
+import {App} from './App';
+import {Shop} from "./components/Shop";
+import {Cart} from "./components/Cart";
 
 function RouteSwitch() {
 
@@ -30,4 +30,4 @@ function RouteSwitch() {
   );
 }
 
-export default RouteSwitch;
+export {RouteSwitch};

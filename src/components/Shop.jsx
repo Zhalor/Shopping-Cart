@@ -1,5 +1,5 @@
-import Header from './Header';
-import Item from './Item';
+import {Header} from './Header';
+import {Item} from './Item';
 import { useState } from 'react';
 
 function Shop(props) {
@@ -36,4 +36,4 @@ function Shop(props) {
   );
 }
 
-export default Shop;
+export {Shop};

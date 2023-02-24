@@ -1,5 +1,5 @@
-import Header from './components/Header';
-import Landing from './components/Landing';
+import {Header} from './components/Header';
+import {Landing} from './components/Landing';
 import './styles.css';
 
 function App(props) {
@@ -11,4 +11,4 @@ function App(props) {
   )
 }
 
-export default App
+export {App}
