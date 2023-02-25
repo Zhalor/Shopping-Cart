@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { App}  from './App';
 import { Shop } from './components/Shop';
 import { Cart } from './components/Cart';
-import { About } from './components/About';
+import { Contact } from './components/Contact';
 import './styles.css';
 
 function RouteSwitch() {
@@ -27,7 +27,7 @@ function RouteSwitch() {
         <Route path='/' element={<App cart={cart} />} />
         <Route path='/shop' element={<Shop storeItems={storeItems} cart={cart} setCart={setCart} />} />
         <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
-        <Route path='/about' element={<About cart={cart} />} />
+        <Route path='/contact' element={<Contact cart={cart} />} />
       </Routes>
     </BrowserRouter>
   );

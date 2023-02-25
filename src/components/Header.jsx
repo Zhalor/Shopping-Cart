@@ -5,11 +5,11 @@ function Header(props) {
   
   return (
     <div className='header'>
-      <h1 className='header-title'><Link to='/'>FakeEgg</Link></h1>
+      <h1 className='header-title'><Link to='/'>FakeStore</Link></h1>
       <div>
         <p className='header-btn'><Link to='/'>Home</Link></p>
         <p className='header-btn'><Link to='/shop'>Shop</Link></p>
-        <p className='header-btn'><Link to='/about'>About</Link></p>
+        <p className='header-btn'><Link to='/contact'>Contact</Link></p>
         <div className='cart-btn'>
           <Link to='/cart'>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

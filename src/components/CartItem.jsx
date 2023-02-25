@@ -3,6 +3,12 @@ import { useState } from "react";
 function CartItem(props) {
   const [quantity, setQuantity] = useState(props.itemIDs[props.item.id]);
 
+  function addTocart(item) {
+    props.setCart(arr => [...arr, item]);
+    console.log(props.cart);
+    props.setTotal(props.cart.reduce((total, current) => total + current.price, 0));
+  }
+
   function removeFromCart(item) {
     let index = 0;
     for(let cartItem of props.cart) {
@@ -24,8 +30,8 @@ function CartItem(props) {
         <p>{props.item.title}</p>
         <p>{props.item.price}</p>
         <p>{quantity}</p>
-        <button onClick={() => {setQuantity(quantity - 1); removeFromCart(props.item), 
-          console.log(props.cart.length)}}>Remove One</button>
+        <button onClick={() => {setQuantity(quantity - 1); removeFromCart(props.item)}}>Remove One</button>
+        <button onClick={() => {setQuantity(quantity + 1); addTocart(props.item)}}>Add One</button>
       </div>
     );
   }
