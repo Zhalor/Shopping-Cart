@@ -24,15 +24,21 @@ function Cart(props) {
 
   return (
     <div className='container'>
-    <Header cart={props.cart} />
-    <div className='cart'>
-      {test.map(item => {
-          return <CartItem item={item} itemIDs={itemIDs} cart={props.cart} 
-          setCart={props.setCart} setTotal={setTotal} />;
-        })}
-      <p>Subtotal: {total}</p>
+      <Header cart={props.cart} />
+      <div className='cart'>
+        <div className='cart-items-container'>
+          {test.map(item => {
+              return <CartItem item={item} itemIDs={itemIDs} cart={props.cart}
+              setCart={props.setCart} setTotal={setTotal} />;
+            })}
+        </div>
+        <div className='total-container'>
+          <p>Shipping: Free</p>
+          <p>Tax: $0.00</p>
+          <p>Subtotal: ${total}</p>
+        </div>
+      </div>
     </div>
-   </div>
   );
 }
 

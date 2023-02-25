@@ -30,10 +30,14 @@ function CartItem(props) {
       <div className="cart-item">
         <img src={props.item.image} alt="" />
         <p>{props.item.title}</p>
-        <p>{props.item.price}</p>
-        <p>{quantity}</p>
-        <button onClick={() => {setQuantity(quantity - 1); removeFromCart(props.item)}}>Remove One</button>
-        <button onClick={() => {setQuantity(quantity + 1); addTocart(props.item)}}>Add One</button>
+        <div>
+          <p>Price: ${props.item.price}</p>
+          <div>
+            <button onClick={() => {setQuantity(quantity - 1); removeFromCart(props.item)}}>-</button>
+            <span>{quantity}</span>
+            <button onClick={() => {setQuantity(quantity + 1); addTocart(props.item)}}>+</button>
+          </div>
+        </div>
       </div>
     );
   }
