@@ -4,7 +4,9 @@ function CartItem(props) {
   const [quantity, setQuantity] = useState(props.itemIDs[props.item.id]);
 
   function addTocart(item) {
-    props.setCart(arr => [...arr, item]);
+    const copyCart = props.cart;
+    copyCart.push(item);
+    props.setCart(arr => copyCart);
     console.log(props.cart);
     props.setTotal(props.cart.reduce((total, current) => total + current.price, 0));
   }
@@ -19,7 +21,7 @@ function CartItem(props) {
     const copyCart = props.cart;
     copyCart.splice(index, 1);
     props.setCart(arr => copyCart);
-
+    console.log(props.cart);
     props.setTotal(props.cart.reduce((total, current) => total + current.price, 0));
   }
 
