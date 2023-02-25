@@ -9,36 +9,80 @@ body {
 
 }
 
-.container {
-  padding: 0 150px;
-}
-
 .header {
+  padding: 0px 300px;
   height: 15vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+  background-color: black;
 }
 
-.header-title {
-  font-size: 3rem;
+.header-title a {
+  font-size: 3.5rem;
+  text-decoration: none;
+  color: #14C7C3;
 }
 
 .header > div {
   display: flex;
-  gap: 200px;
+  gap: 100px;
+  color: white;
+  text-align: center;
+  align-items: center;
+  height: 100px;
+}
+
+.header-btn {
+  z-index: 1;
+  width: 100px;
+}
+
+.header-btn a {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  padding-bottom: 5px;
+}
+
+.header-btn a:hover {
+  border-bottom: 2px solid white;
 }
 
 .cart-btn {
   display: flex;
-  gap: 3px;
-  width: 40px;
-  justify-content: flex-end;
+  position: relative;
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
 }
 
-.landing, .shop, .cart {
-  padding-top: 100px;
+svg {
+  height: 42px;
+  width: 32px;
+  fill: black;
+
+}
+
+.cart-quantity {
+  padding-top: 3px;
+  position: absolute;
+  left: -7px;
+  top: 40px;
+  background-color: #FF9999;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  color: black;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.landing, .shop, .cart, .about {
+  padding: 100px 300px 0px 300px;
 }
 
 .shop {

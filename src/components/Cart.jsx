@@ -11,10 +11,12 @@ function Cart(props) {
 
   const uniqueItems = [];
   for(let item of props.cart) {
-    if(!uniqueItems.includes(item)) {
+    const dupe = uniqueItems.find(obj => obj.id === item.id);
+    if(!dupe) {
       uniqueItems.push(item);
     }
   }
+  console.log(uniqueItems);
 
   return (
     <div className='container'>

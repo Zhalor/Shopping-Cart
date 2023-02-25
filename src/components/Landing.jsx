@@ -1,7 +1,7 @@
 function Landing(props) {
   return (
     <div className="landing">
-      <p>This is the landing page. Click "Shop" In the top right corner to go to ther shop.</p>
+      <p>From jewelery to electronics, if you only need four to six items, we've got you covered.</p>
     </div>
   );
 }
