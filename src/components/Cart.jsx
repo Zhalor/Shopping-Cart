@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 function Cart(props) {
   const [total, setTotal] = useState(props.cart.reduce((total, current) => total + current.price, 0));
-  const [test, setTest] = useState([]);
+  const [uniqueCart, setUniqueCart] = useState([]);
 
   useEffect(() => {
     const uniqueItems = [];
@@ -14,7 +14,7 @@ function Cart(props) {
         uniqueItems.push(item);
       }
     }
-    setTest(arr => uniqueItems);
+    setUniqueCart(arr => uniqueItems);
   }, []);
 
   const itemIDs = {};
@@ -27,7 +27,7 @@ function Cart(props) {
       <Header cart={props.cart} />
       <div className='cart'>
         <div className='cart-items-container'>
-          {test.map(item => {
+          {uniqueCart.map(item => {
               return <CartItem item={item} itemIDs={itemIDs} cart={props.cart}
               setCart={props.setCart} setTotal={setTotal} />;
             })}

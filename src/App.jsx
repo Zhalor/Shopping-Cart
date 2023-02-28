@@ -1,11 +1,11 @@
 import {Header} from './components/Header';
-import {Landing} from './components/Landing';
+import {Home} from './components/Home';
 
 function App(props) {
   return (
    <div className='container'>
     <Header cart={props.cart} />
-    <Landing />
+    <Home />
    </div>
   )
 }

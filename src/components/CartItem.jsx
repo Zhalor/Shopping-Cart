@@ -7,7 +7,6 @@ function CartItem(props) {
     const copyCart = props.cart;
     copyCart.push(item);
     props.setCart(arr => copyCart);
-    console.log(props.cart);
     props.setTotal(props.cart.reduce((total, current) => total + current.price, 0));
   }
 
@@ -21,7 +20,6 @@ function CartItem(props) {
     const copyCart = props.cart;
     copyCart.splice(index, 1);
     props.setCart(arr => copyCart);
-    console.log(props.cart);
     props.setTotal(props.cart.reduce((total, current) => total + current.price, 0));
   }
 

@@ -6,15 +6,24 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(247, 247, 247);
+  background-color: #f7f7f7;
+}
+
+.container {
+  height: 100vh;
 }
 
 .header {
-  padding: 0px 15%;
   height: 15vh;
+  background-color: black;
+}
+
+.header > div {
+  width: 1300px;
+  height: 100%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  background-color: black;
   justify-content: space-between;
 }
 
@@ -24,7 +33,7 @@ body {
   color: #21e4e0;
 }
 
-.header > div {
+.header > div > div {
   display: flex;
   gap: 100px;
   color: white;
@@ -66,7 +75,7 @@ body {
   background-color: rgb(230, 230, 230);
 }
 
-svg {
+.cart-icon {
   height: 42px;
   width: 32px;
   fill: black;
@@ -87,8 +96,52 @@ svg {
   font-size: 1.3rem;
 }
 
-.landing, .shop, .cart, .about {
-  padding: 100px 15% 0px 15%;
+.home, .shop, .cart, .about {
+  padding-top: 150px;
+  width: 1300px;
+  margin: 0 auto;
+}
+
+.home {
+  display: flex;
+  gap: 40px;
+}
+
+.home-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.home > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.home > img {
+  height: 450px;
+  border-radius: 5%;
+  margin-top: 20px;
+}
+
+.home button {
+  width: 320px;
+  height: 80px;
+  background-color: black;
+  color: white;
+  font-size: 2.4rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all .25s;
+}
+
+.home button:hover {
+  transform: scale(1.05);
 }
 
 .shop {
@@ -183,6 +236,7 @@ svg {
 .cart {
   display: flex;
   justify-content: space-between;
+  height: fit-content;
 }
 
 .cart-item {
@@ -223,6 +277,9 @@ svg {
 }
 
 .total-container {
+  align-self: flex-start;
+  position: sticky;
+  top: 150px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -233,4 +290,33 @@ svg {
   font-weight: 700;
   border-top: 1px solid rgba(0, 0, 0, 0.3);
   padding-top: 5px;
+}
+
+.contact-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.contact-icon {
+  fill: black;
+  width: 100px;
+  height: 100px;
+  transition: all .25s;
+  transition-timing-function: ease-in-out;
+}
+
+.contact-icon:hover {
+  transform: scale(1.05);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 150px;
+  font-size: 1.8rem;
+  font-weight: 700;
 }
