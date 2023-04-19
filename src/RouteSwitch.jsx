@@ -22,7 +22,7 @@ function RouteSwitch() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/Shopping-Cart'>
       <Routes>
         <Route path='/' element={<App cart={cart} />} />
         <Route path='/shop' element={<Shop storeItems={storeItems} cart={cart} setCart={setCart} />} />
